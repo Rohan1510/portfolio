@@ -1,266 +1,121 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rohan Krishna Surapaneni | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surapaneni Rohan Krishna - Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- AOS for scroll animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    .section-heading {
-      @apply text-3xl md:text-4xl font-bold text-center mb-12 text-gray-100;
-    }
-    .card {
-      @apply bg-gray-800/70 border border-gray-700 rounded-xl shadow-lg transition-all duration-300 hover:shadow-cyan-500/30 hover:-translate-y-2 backdrop-blur-lg;
-    }
-  </style>
-</head>
-<body class="bg-gray-900 text-gray-300">
-
-  <!-- Header -->
-  <header class="bg-gray-900/70 backdrop-blur-lg fixed top-0 left-0 right-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold text-cyan-400">Rohan Krishna</a>
-      <nav class="hidden md:flex space-x-8 text-gray-300">
-        <a href="#about" class="hover:text-cyan-400 transition">About</a>
-        <a href="#experience" class="hover:text-cyan-400 transition">Experience</a>
-        <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
-        <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
-        <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
-      </nav>
-      <button id="mobile-menu-button" class="md:hidden text-white">
-        <i class="fas fa-bars fa-xl"></i>
-      </button>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-800/90">
-      <a href="#about" class="block py-2 px-6 hover:bg-gray-700">About</a>
-      <a href="#experience" class="block py-2 px-6 hover:bg-gray-700">Experience</a>
-      <a href="#projects" class="block py-2 px-6 hover:bg-gray-700">Projects</a>
-      <a href="#skills" class="block py-2 px-6 hover:bg-gray-700">Skills</a>
-      <a href="#contact" class="block py-2 px-6 hover:bg-gray-700">Contact</a>
-    </div>
-  </header>
-
-  <main class="pt-20">
-
-    <!-- Hero Section -->
-    <section id="hero" class="relative py-32 overflow-hidden">
-      <!-- Background glow -->
-      <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/10 to-pink-500/20 blur-3xl"></div>
-
-      <div class="container mx-auto px-6 text-center relative z-10" data-aos="fade-up">
-        <h1 class="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 animate-pulse">
-          Surapaneni Rohan Krishna
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-300 mt-4">
-          <span id="typing" class="text-cyan-400 font-semibold"></span>
-        </p>
-        <p class="mt-6 max-w-2xl mx-auto text-gray-400">
-          Passionate about leveraging cloud technologies and development skills to build innovative and scalable solutions.
-        </p>
-        <div class="mt-8 flex justify-center gap-6">
-          <a href="mailto:rohankrishna150@gmail.com" class="bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition">
-            Contact Me
-          </a>
-          <a href="https://github.com/Rohan1510" target="_blank" class="border border-gray-600 px-6 py-3 rounded-xl hover:bg-gray-800 hover:text-white transition">
-            <i class="fab fa-github mr-2"></i> GitHub
-          </a>
-          <a href="#" target="_blank" class="border border-gray-600 px-6 py-3 rounded-xl hover:bg-gray-800 hover:text-white transition">
-            <i class="fab fa-linkedin mr-2"></i> LinkedIn
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-800/40" data-aos="fade-up">
-      <div class="container mx-auto px-6">
-        <h2 class="section-heading">About Me</h2>
-        <div class="max-w-4xl mx-auto text-center text-lg">
-          <p>
-            I am a computer science graduate and an AWS Certified Cloud Practitioner with practical experience in developing and deploying applications on AWS. Skilled in front-end development using HTML, CSS, and JavaScript, I possess a strong understanding of cloud computing, scalability, and modern technologies. I am passionate about using my technical skills to provide effective and innovative solutions.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20" data-aos="fade-up">
-      <div class="container mx-auto px-6">
-        <h2 class="section-heading">Work Experience</h2>
-        <div class="max-w-4xl mx-auto">
-          <div class="card p-8">
-            <div class="flex justify-between items-start">
-              <div>
-                <h3 class="text-xl font-bold text-white">Full-Stack Development Intern</h3>
-                <p class="text-cyan-400">Bharat Dynamics Limited (BDL)</p>
-              </div>
-              <span class="text-gray-400">June 2024 - July 2024</span>
-            </div>
-            <ul class="mt-6 list-disc list-inside space-y-3 text-gray-400">
-              <li>Built an Online Inspection Memo System to simplify and digitize the inspection process.</li>
-              <li>Developed with Java, JavaScript, HTML, CSS, and SQL for smooth user experience.</li>
-              <li>Collaborated with teams to gather requirements and improve system performance.</li>
-              <li>Hands-on experience in full-stack development & deployment.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-800/40" data-aos="fade-up">
-      <div class="container mx-auto px-6">
-        <h2 class="section-heading">Projects</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="card p-6 flex flex-col hover:scale-105 transition">
-            <h3 class="text-xl font-bold text-white mb-2">Serverless Blog with Markdown Editor</h3>
-            <p class="text-gray-400 flex-grow">Built a serverless blog platform with Markdown editor, Cognito authentication, comments, and SEO optimization.</p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="bg-cyan-900/50 text-cyan-300 text-sm px-3 py-1 rounded-full">AWS Amplify</span>
-              <span class="bg-cyan-900/50 text-cyan-300 text-sm px-3 py-1 rounded-full">DynamoDB</span>
-              <span class="bg-cyan-900/50 text-cyan-300 text-sm px-3 py-1 rounded-full">CloudFront</span>
-              <span class="bg-cyan-900/50 text-cyan-300 text-sm px-3 py-1 rounded-full">React</span>
-            </div>
-          </div>
-          <div class="card p-6 flex flex-col hover:scale-105 transition">
-            <h3 class="text-xl font-bold text-white mb-2">Cloud-Based Communication Platform</h3>
-            <p class="text-gray-400 flex-grow">A real-time Slack alternative with AI-driven search, redundancy, and end-to-end encryption.</p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="bg-cyan-900/50 text-cyan-300 text-sm px-3 py-1 rounded-full">AWS ECS</span>
-              <span class="bg-cyan-900/50 text-cyan-300 text-sm px-3 py-1 rounded-full">Kafka</span>
-              <span class="bg-cyan-900/50 text-cyan-300 text-sm px-3 py-1 rounded-full">Redis</span>
-            </div>
-          </div>
-          <div class="card p-6 flex flex-col hover:scale-105 transition">
-            <h3 class="text-xl font-bold text-white mb-2">Online Inspection Memo System</h3>
-            <p class="text-gray-400 flex-grow">Secure inspection management with CRUD, RBAC, version control, and optimized SQL queries.</p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="bg-cyan-900/50 text-cyan-300 text-sm px-3 py-1 rounded-full">Spring Boot</span>
-              <span class="bg-cyan-900/50 text-cyan-300 text-sm px-3 py-1 rounded-full">JavaScript</span>
-              <span class="bg-cyan-900/50 text-cyan-300 text-sm px-3 py-1 rounded-full">SQL</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20" data-aos="fade-up">
-      <div class="container mx-auto px-6">
-        <h2 class="section-heading">Skills</h2>
-        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
-          <div class="skill-item flex flex-col items-center gap-2 hover:scale-110 transition">
-            <i class="fas fa-code text-4xl text-cyan-400"></i>
-            <p class="font-semibold text-white">Java</p>
-          </div>
-          <div class="skill-item flex flex-col items-center gap-2 hover:scale-110 transition">
-            <i class="fas fa-database text-4xl text-cyan-400"></i>
-            <p class="font-semibold text-white">MySQL</p>
-          </div>
-          <div class="skill-item flex flex-col items-center gap-2 hover:scale-110 transition">
-            <i class="fab fa-aws text-4xl text-cyan-400"></i>
-            <p class="font-semibold text-white">AWS</p>
-          </div>
-          <div class="skill-item flex flex-col items-center gap-2 hover:scale-110 transition">
-            <i class="fas fa-server text-4xl text-cyan-400"></i>
-            <p class="font-semibold text-white">Serverless</p>
-          </div>
-          <div class="skill-item flex flex-col items-center gap-2 hover:scale-110 transition">
-            <i class="fab fa-js text-4xl text-cyan-400"></i>
-            <p class="font-semibold text-white">JavaScript</p>
-          </div>
-          <div class="skill-item flex flex-col items-center gap-2 hover:scale-110 transition">
-            <i class="fab fa-html5 text-4xl text-cyan-400"></i>
-            <p class="font-semibold text-white">HTML</p>
-          </div>
-          <div class="skill-item flex flex-col items-center gap-2 hover:scale-110 transition">
-            <i class="fab fa-css3-alt text-4xl text-cyan-400"></i>
-            <p class="font-semibold text-white">CSS</p>
-          </div>
-          <div class="skill-item flex flex-col items-center gap-2 hover:scale-110 transition">
-            <i class="fas fa-chart-bar text-4xl text-cyan-400"></i>
-            <p class="font-semibold text-white">Power BI</p>
-          </div>
-          <div class="skill-item flex flex-col items-center gap-2 hover:scale-110 transition">
-            <i class="fab fa-docker text-4xl text-cyan-400"></i>
-            <p class="font-semibold text-white">Docker</p>
-          </div>
-          <div class="skill-item flex flex-col items-center gap-2 hover:scale-110 transition">
-            <i class="fab fa-cuttlefish text-4xl text-cyan-400"></i>
-            <p class="font-semibold text-white">C</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-20 bg-gray-800/40" data-aos="fade-up">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="section-heading">Get In Touch</h2>
-        <p class="max-w-2xl mx-auto text-lg mb-8">
-          I'm always open to discussing new projects, creative ideas or opportunities.
-        </p>
-        <a href="mailto:rohankrishna150@gmail.com" class="text-2xl font-semibold text-cyan-400 hover:text-cyan-500 transition">rohankrishna150@gmail.com</a>
-        <p class="mt-4 text-gray-400">+91 7801037849</p>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 py-6">
-    <div class="container mx-auto px-6 text-center text-gray-400">
-      <p>&copy; <span id="year"></span> Surapaneni Rohan Krishna. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <!-- Scroll to top button -->
-  <button id="to-top-button" class="hidden fixed bottom-8 right-8 bg-cyan-500 p-3 rounded-full text-white shadow-lg hover:bg-cyan-600 transition">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 1000, once: true });</script>
-
   <script>
-    // Mobile menu toggle
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    document.addEventListener("DOMContentLoaded", () => {
+      AOS.init({
+        duration: 800,
+        easing: "ease-out-quart",
+        once: true
+      });
     });
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-    });
+  </script>
+</head>
+<body class="bg-gray-950 text-gray-200 font-sans">
+  <!-- Navbar -->
+  <nav class="fixed w-full top-0 left-0 backdrop-blur-md bg-gray-900/70 shadow-lg z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="text-2xl font-bold text-teal-400">Rohan Krishna</h1>
+      <ul class="flex space-x-6 text-gray-300">
+        <li><a href="#hero" class="hover:text-teal-400 transition">Home</a></li>
+        <li><a href="#about" class="hover:text-teal-400 transition">About</a></li>
+        <li><a href="#skills" class="hover:text-teal-400 transition">Skills</a></li>
+        <li><a href="#projects" class="hover:text-teal-400 transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-teal-400 transition">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    // Year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- Hero Section -->
+  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center relative px-6">
+    <div data-aos="fade-up" class="max-w-3xl">
+      <h1 class="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-violet-500">
+        Surapaneni Rohan Krishna
+      </h1>
+      <p class="mt-4 text-xl text-gray-400">
+        <span id="typing" class="text-teal-400 font-semibold"></span>
+      </p>
+      <p class="mt-6 text-gray-400 max-w-2xl mx-auto">
+        Passionate about leveraging cloud technologies and development skills to build innovative and scalable solutions.
+      </p>
+      <div class="mt-8 flex justify-center gap-6">
+        <a href="mailto:rohankrishna150@gmail.com" class="bg-gradient-to-r from-teal-500 to-violet-500 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition-transform">Contact Me</a>
+        <a href="https://github.com/Rohan1510" target="_blank" class="border border-gray-600 px-6 py-3 rounded-xl hover:bg-gray-800 hover:text-white transition">GitHub</a>
+        <a href="#" target="_blank" class="border border-gray-600 px-6 py-3 rounded-xl hover:bg-gray-800 hover:text-white transition">LinkedIn</a>
+      </div>
+    </div>
+  </section>
 
-    // Scroll to top
-    const toTopButton = document.getElementById('to-top-button');
-    window.onscroll = function () {
-      if (document.documentElement.scrollTop > 200) {
-        toTopButton.classList.remove('hidden');
-      } else {
-        toTopButton.classList.add('hidden');
-      }
-    };
-    toTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  <!-- About Section -->
+  <section id="about" class="py-20 flex justify-center px-6">
+    <div class="max-w-3xl w-full bg-gray-900/70 backdrop-blur-xl rounded-2xl shadow-xl p-10" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-teal-400 mb-6">About Me</h2>
+      <p class="text-gray-300 leading-relaxed">
+        I am Surapaneni Rohan Krishna, a passionate developer and AWS Cloud Practitioner.
+        My focus is on creating modern, scalable solutions while exploring
+        cloud technologies and full-stack development.
+      </p>
+    </div>
+  </section>
 
-    // Typing animation
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 flex justify-center px-6">
+    <div class="max-w-5xl w-full bg-gray-900/70 backdrop-blur-xl rounded-2xl shadow-xl p-10" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-teal-400 mb-8 text-center">Skills</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 bg-gray-800/70 rounded-xl shadow-lg hover:scale-105 transition-transform" data-aos="zoom-in">
+          <h3 class="text-xl font-semibold text-violet-400 mb-4">Cloud</h3>
+          <p>AWS Cloud Practitioner Certified, EC2, S3, Lambda, API Gateway.</p>
+        </div>
+        <div class="p-6 bg-gray-800/70 rounded-xl shadow-lg hover:scale-105 transition-transform" data-aos="zoom-in">
+          <h3 class="text-xl font-semibold text-violet-400 mb-4">Development</h3>
+          <p>Full-Stack Development, HTML, CSS, JavaScript, React, Node.js.</p>
+        </div>
+        <div class="p-6 bg-gray-800/70 rounded-xl shadow-lg hover:scale-105 transition-transform" data-aos="zoom-in">
+          <h3 class="text-xl font-semibold text-violet-400 mb-4">Problem Solving</h3>
+          <p>Data Structures & Algorithms, Competitive Programming.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 flex justify-center px-6">
+    <div class="max-w-5xl w-full bg-gray-900/70 backdrop-blur-xl rounded-2xl shadow-xl p-10" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-teal-400 mb-8 text-center">Projects</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 bg-gray-800/70 rounded-xl shadow-lg hover:scale-105 transition-transform" data-aos="fade-right">
+          <h3 class="text-xl font-semibold text-violet-400 mb-4">Portfolio Website</h3>
+          <p>Personal portfolio built with HTML, Tailwind, animations, and responsive design.</p>
+        </div>
+        <div class="p-6 bg-gray-800/70 rounded-xl shadow-lg hover:scale-105 transition-transform" data-aos="fade-left">
+          <h3 class="text-xl font-semibold text-violet-400 mb-4">AWS Event System</h3>
+          <p>Built an event announcement system using AWS SNS, Lambda, and API Gateway (free tier).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 flex justify-center px-6">
+    <div class="max-w-3xl w-full bg-gray-900/70 backdrop-blur-xl rounded-2xl shadow-xl p-10 text-center" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-teal-400 mb-6">Contact</h2>
+      <p class="text-gray-300 mb-6">Let's connect! Feel free to reach out for collaborations or opportunities.</p>
+      <a href="mailto:rohankrishna150@gmail.com" class="bg-gradient-to-r from-teal-500 to-violet-500 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition-transform">Email Me</a>
+    </div>
+  </section>
+
+  <!-- Typing Effect -->
+  <script>
     const roles = ["AWS Cloud Practitioner", "Full-Stack Developer", "Problem Solver"];
     let i = 0, j = 0, currentRole = "", isDeleting = false;
+
     function typeEffect() {
       if (i < roles.length) {
         if (!isDeleting && j <= roles[i].length) {
@@ -268,10 +123,12 @@
         } else if (isDeleting && j >= 0) {
           currentRole = roles[i].substring(0, j--);
         }
+
         document.getElementById("typing").textContent = currentRole;
+
         if (!isDeleting && j === roles[i].length) {
           isDeleting = true;
-          setTimeout(typeEffect, 1500);
+          setTimeout(typeEffect, 1200);
           return;
         } else if (isDeleting && j === 0) {
           isDeleting = false;
