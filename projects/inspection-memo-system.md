@@ -1,15 +1,12 @@
 # Online Inspection Memo System
 
 ## Context
-Built during internship at Bharat Dynamics Limited to digitize inspection workflows.
+Developed at Bharat Dynamics Limited to digitize inspection workflows.
 
 ## Responsibilities
-- Backend data modeling
-- Secure CRUD operations
+- Java backend logic (DAO pattern)
+- MySQL schema design and query optimization
 - Role-based access control
-- SQL query optimization
 
-## Stack
-- Java
-- SQL
-- DAO Pattern
+## Outcome
+Improved traceability and reliability of inspection records.
