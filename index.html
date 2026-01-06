@@ -3,242 +3,155 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Surapaneni Rohan Krishna | Portfolio</title>
-  <!-- Tailwind (CDN) -->
+  <title>Rohan Krishna | Cloud & Backend Engineer</title>
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body class="h-full bg-gray-950 text-gray-100 font-[Inter,sans-serif]"
+
+<body class="h-full bg-gray-950 text-gray-100 font-sans"
       x-data="portfolioApp()"
       x-init="init()">
 
-  <!-- Navbar -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-gray-950/70 backdrop-blur-md border-b border-white/5">
-    <nav class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="h-16 flex items-center justify-between">
-        <a href="#" @click.prevent="go('home')" class="flex items-center gap-2">
-          <div class="h-7 w-7 rounded-xl bg-gradient-to-br from-teal-400 to-violet-500 shadow"></div>
-          <span class="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-violet-500">
-            Rohan Krishna
-          </span>
-        </a>
-        <!-- Desktop Nav -->
-        <ul class="hidden md:flex items-center gap-2">
-          <template x-for="item in tabs" :key="item.id">
-            <li>
-              <button
-                @click="go(item.id)"
-                class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300
-                       text-gray-300 hover:text-white hover:shadow-lg hover:shadow-teal-500/20"
-                :class="active === item.id
-                        ? 'bg-gradient-to-r from-teal-500 to-violet-600 text-white shadow-lg'
-                        : 'hover:bg-gradient-to-r hover:from-teal-500/10 hover:to-violet-600/10'">
-                <span x-text="item.label"></span>
-              </button>
-            </li>
-          </template>
-        </ul>
-        <!-- Mobile menu button -->
-        <button class="md:hidden p-2 rounded-lg hover:bg-white/5 transition"
-                @click="mobileOpen = !mobileOpen">
-          <i :class="mobileOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
+<!-- NAVBAR -->
+<header class="fixed top-0 inset-x-0 z-50 bg-gray-950/80 backdrop-blur border-b border-white/10">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <span class="font-bold text-lg">Rohan Krishna</span>
+    <div class="hidden md:flex gap-4">
+      <template x-for="t in tabs" :key="t.id">
+        <button @click="go(t.id)"
+          class="text-sm px-3 py-1 rounded-md transition"
+          :class="active === t.id ? 'bg-teal-500 text-black' : 'text-gray-400 hover:text-white'">
+          <span x-text="t.label"></span>
         </button>
-      </div>
-      <!-- Mobile menu -->
-      <div x-show="mobileOpen" x-transition.origin.top class="md:hidden pb-3 space-y-2">
-        <template x-for="item in tabs" :key="item.id">
-          <button @click="go(item.id); mobileOpen=false"
-                  class="w-full text-left px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
-            <span x-text="item.label"></span>
-          </button>
-        </template>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Main Stage -->
-  <main class="min-h-screen flex items-center justify-center pt-16 px-4">
-    <div class="relative w-full max-w-5xl">
-      <!-- Card -->
-      <section class="relative mx-auto w-full rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40">
-        <div class="p-6 sm:p-10">
-          
-          <!-- HOME -->
-          <div x-show="active === 'home'" x-transition.duration.600ms class="space-y-6 text-center">
-            <h1 class="text-3xl sm:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-violet-500">
-              Surapaneni Rohan Krishna
-            </h1>
-            <p class="text-lg text-gray-300">AWS Certified Cloud Practitioner & Full-Stack Developer</p>
-            <div class="flex justify-center gap-4 mt-6">
-              <a href="mailto:rohankrishna150@gmail.com" class="px-6 py-3 rounded-lg bg-gradient-to-r from-teal-500 to-violet-600 shadow-lg hover:scale-105 transition-all">Contact Me</a>
-              <a href="https://github.com/Rohan1510" target="_blank" class="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all"><i class="fab fa-github mr-2"></i> GitHub</a>
-              <a href="https://linkedin.com" target="_blank" class="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all"><i class="fab fa-linkedin mr-2"></i> LinkedIn</a>
-            </div>
-          </div>
-
-          <!-- ABOUT -->
-          <div x-show="active === 'about'" x-transition.duration.600ms class="space-y-6">
-            <h2 class="text-3xl font-bold text-teal-300">About Me</h2>
-            <p class="text-gray-200 leading-relaxed">
-              I am a computer science graduate and an AWS Certified Cloud Practitioner with hands-on experience in
-              building and deploying applications. Skilled in frontend (HTML, CSS, JS) and backend (Java, SQL) development,
-              with strong knowledge of cloud computing and scalable systems.
-            </p>
-          </div>
-
-          <!-- SKILLS -->
-          <div x-show="active === 'skills'" x-transition.duration.600ms class="space-y-6">
-            <h2 class="text-3xl font-bold text-teal-300">Skills</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
-              <div class="flex flex-col items-center gap-2 hover:scale-110 transition">
-                <i class="fab fa-java text-4xl text-violet-400"></i><p>Java</p>
-              </div>
-              <div class="flex flex-col items-center gap-2 hover:scale-110 transition">
-                <i class="fab fa-js text-4xl text-yellow-400"></i><p>JavaScript</p>
-              </div>
-              <div class="flex flex-col items-center gap-2 hover:scale-110 transition">
-                <i class="fab fa-react text-4xl text-cyan-400"></i><p>React</p>
-              </div>
-              <div class="flex flex-col items-center gap-2 hover:scale-110 transition">
-                <i class="fab fa-html5 text-4xl text-orange-500"></i><p>HTML</p>
-              </div>
-              <div class="flex flex-col items-center gap-2 hover:scale-110 transition">
-                <i class="fab fa-css3-alt text-4xl text-blue-400"></i><p>CSS</p>
-              </div>
-              <div class="flex flex-col items-center gap-2 hover:scale-110 transition">
-                <i class="fab fa-aws text-4xl text-yellow-500"></i><p>AWS</p>
-              </div>
-              <div class="flex flex-col items-center gap-2 hover:scale-110 transition">
-                <i class="fas fa-database text-4xl text-green-400"></i><p>SQL</p>
-              </div>
-              <div class="flex flex-col items-center gap-2 hover:scale-110 transition">
-                <i class="fab fa-docker text-4xl text-blue-500"></i><p>Docker</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- PROJECTS -->
-          <div x-show="active === 'projects'" x-transition.duration.600ms class="space-y-6">
-            <h2 class="text-3xl font-bold text-teal-300">Projects</h2>
-            <div class="grid gap-4">
-              <template x-for="proj in projects" :key="proj.title">
-                <div class="p-4 rounded-lg bg-gray-800/60 cursor-pointer hover:bg-gray-700 transition"
-                     @click="openProject(proj)">
-                  <h3 class="text-xl font-semibold" x-text="proj.title"></h3>
-                  <p class="text-gray-400" x-text="proj.short"></p>
-                </div>
-              </template>
-            </div>
-          </div>
-
-          <!-- EXPERIENCE -->
-          <div x-show="active === 'experience'" x-transition.duration.600ms class="space-y-6">
-            <h2 class="text-3xl font-bold text-teal-300">Experience</h2>
-            <div class="p-4 rounded-lg bg-gray-800/60">
-              <h3 class="text-xl font-semibold">Full-Stack Development Intern – Bharat Dynamics Limited</h3>
-              <p class="text-gray-400">June 2024 - July 2024</p>
-              <ul class="list-disc ml-5 mt-2 text-gray-300 space-y-1">
-                <li>Developed an Online Inspection Memo System.</li>
-                <li>Tech: Java, JavaScript, SQL, HTML, CSS.</li>
-                <li>Worked with teams for requirements & deployment.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- EDUCATION -->
-          <div x-show="active === 'education'" x-transition.duration.600ms class="space-y-6">
-            <h2 class="text-3xl font-bold text-teal-300">Education</h2>
-            <div class="p-4 rounded-lg bg-gray-800/60">
-              <p class="font-semibold">B.Tech CSE, SRM University AP</p>
-              <p class="text-gray-400">2022 – 2026</p>
-            </div>
-            <div class="p-4 rounded-lg bg-gray-800/60">
-              <p class="font-semibold">Class 12 – Telangana State Board</p>
-              <p class="text-gray-400">2022</p>
-            </div>
-          </div>
-
-          <!-- CONTACT -->
-          <div x-show="active === 'contact'" x-transition.duration.600ms class="space-y-6">
-            <h2 class="text-3xl font-bold text-teal-300">Get In Touch</h2>
-            <p>Email: <a href="mailto:rohankrishna150@gmail.com" class="text-violet-400 hover:underline">rohankrishna150@gmail.com</a></p>
-            <p>Phone: +91 7801037849</p>
-          </div>
-
-        </div>
-      </section>
+      </template>
     </div>
-  </main>
+  </nav>
+</header>
 
-  <!-- Project Modal -->
-  <div x-show="showModal" x-transition.opacity class="fixed inset-0 bg-black/70 flex items-center justify-center z-[100]">
-    <div @click.away="showModal=false"
-         class="bg-gray-900/90 rounded-xl p-6 max-w-lg w-full shadow-2xl border border-white/10">
-      <h3 class="text-2xl font-bold mb-3" x-text="modalProject.title"></h3>
-      <p class="text-gray-300 mb-4" x-text="modalProject.details"></p>
-      <div class="flex flex-wrap gap-2">
-        <template x-for="t in modalProject.stack" :key="t">
-          <span class="px-3 py-1 rounded-full bg-gray-800 text-sm text-teal-300" x-text="t"></span>
-        </template>
-      </div>
-      <button class="mt-6 px-4 py-2 bg-gradient-to-r from-teal-500 to-violet-600 rounded-lg"
-              @click="showModal=false">Close</button>
+<main class="pt-24 max-w-5xl mx-auto px-6 space-y-20">
+
+<!-- HERO -->
+<section x-show="active==='home'" class="text-center space-y-6">
+  <h1 class="text-4xl md:text-5xl font-bold">
+    Cloud & Backend Engineer
+  </h1>
+  <p class="text-gray-400 max-w-2xl mx-auto">
+    I design secure, scalable backend systems using AWS and serverless architectures,
+    with a focus on reliability, data integrity, and real-world failure scenarios.
+  </p>
+  <div class="flex justify-center gap-4">
+    <a href="mailto:rohankrishna150@gmail.com"
+       class="px-5 py-2 bg-teal-500 text-black rounded-md font-medium">
+      Contact
+    </a>
+    <a href="https://github.com/Rohan1510" target="_blank"
+       class="px-5 py-2 border border-white/20 rounded-md">
+      GitHub
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section x-show="active==='about'" class="space-y-4">
+  <h2 class="text-2xl font-semibold text-teal-400">About</h2>
+  <p class="text-gray-300">
+    I focus on backend-heavy and cloud-native development rather than UI-centric work.
+    My interests lie in system design, authentication, data modeling, and infrastructure
+    that behaves predictably under load and failure.
+  </p>
+  <p class="text-gray-400">
+    I care about how systems fail, how access is controlled, and how data is protected —
+    not just how fast features are shipped.
+  </p>
+</section>
+
+<!-- PROJECTS -->
+<section x-show="active==='projects'" class="space-y-6">
+  <h2 class="text-2xl font-semibold text-teal-400">Selected Work</h2>
+
+  <div class="space-y-4">
+    <div class="p-5 bg-gray-900 rounded-lg border border-white/10">
+      <h3 class="font-semibold">Secure Serverless SaaS</h3>
+      <p class="text-gray-400">
+        Designed a zero-trust serverless application with per-user data isolation,
+        IAM least-privilege, encrypted storage, and JWT-based authentication.
+      </p>
+      <p class="text-sm text-gray-500 mt-2">
+        AWS Lambda · API Gateway · Cognito · DynamoDB · KMS · CloudFront
+      </p>
+    </div>
+
+    <div class="p-5 bg-gray-900 rounded-lg border border-white/10">
+      <h3 class="font-semibold">Cloud-Based Messaging Platform</h3>
+      <p class="text-gray-400">
+        Backend-focused messaging system emphasizing API design, scalability,
+        message persistence, and low-latency access patterns.
+      </p>
+      <p class="text-sm text-gray-500 mt-2">
+        AWS ECS · DynamoDB · Redis · Kafka
+      </p>
+    </div>
+
+    <div class="p-5 bg-gray-900 rounded-lg border border-white/10">
+      <h3 class="font-semibold">Online Inspection Memo System (BDL)</h3>
+      <p class="text-gray-400">
+        Built a secure internal system to digitize inspection workflows with
+        role-based access, optimized SQL queries, and backend validation.
+      </p>
+      <p class="text-sm text-gray-500 mt-2">
+        Java · SQL · DAO Pattern
+      </p>
     </div>
   </div>
+</section>
 
-  <script>
-    function portfolioApp() {
-      return {
-        active: 'home',
-        mobileOpen: false,
-        showModal: false,
-        modalProject: {},
-        tabs: [
-          { id: 'home', label: 'Home' },
-          { id: 'about', label: 'About' },
-          { id: 'skills', label: 'Skills' },
-          { id: 'projects', label: 'Projects' },
-          { id: 'experience', label: 'Experience' },
-          { id: 'education', label: 'Education' },
-          { id: 'contact', label: 'Contact' },
-        ],
-        projects: [
-          {
-            title: "Serverless Blog with Markdown Editor",
-            short: "AWS Cognito, Serverless comments, SEO optimized.",
-            details: "Built a serverless blog platform with Markdown editor, AWS Cognito authentication, serverless comments, and CloudFront CDN for performance.",
-            stack: ["AWS Amplify", "DynamoDB", "S3", "CloudFront", "React"]
-          },
-          {
-            title: "Cloud-Based Communication Platform",
-            short: "Slack-like platform with AI-driven search.",
-            details: "Developed a real-time messaging platform with low-latency, multi-region redundancy, and enterprise-grade security.",
-            stack: ["AWS ECS", "DynamoDB", "Kafka", "Redis"]
-          },
-          {
-            title: "Online Inspection Memo System",
-            short: "Inspection management system for BDL.",
-            details: "Designed secure inspection system with CRUD operations, role-based access, and optimized SQL queries.",
-            stack: ["Java (Spring Boot)", "JavaScript", "SQL", "DAO Pattern"]
-          },
-        ],
-        go(id) {
-          this.active = id;
-          history.replaceState(null, '', `#${id}`);
-        },
-        openProject(proj) {
-          this.modalProject = proj;
-          this.showModal = true;
-        },
-        init() {
-          const hash = location.hash.replace('#','');
-          if (this.tabs.some(t => t.id === hash)) this.active = hash;
-        }
-      }
-    }
-  </script>
+<!-- STACK -->
+<section x-show="active==='stack'" class="space-y-4">
+  <h2 class="text-2xl font-semibold text-teal-400">Technical Stack</h2>
+  <ul class="text-gray-300 space-y-2">
+    <li><b class="text-teal-300">Cloud:</b> AWS (Lambda, S3, DynamoDB, IAM, CloudFront)</li>
+    <li><b class="text-teal-300">Backend:</b> Java, Node.js, REST APIs, authentication</li>
+    <li><b class="text-teal-300">Infra:</b> Docker, CI/CD basics</li>
+    <li><b class="text-teal-300">Security:</b> IAM policies, encryption basics, threat modeling</li>
+  </ul>
+</section>
+
+<!-- EXPERIENCE -->
+<section x-show="active==='experience'" class="space-y-4">
+  <h2 class="text-2xl font-semibold text-teal-400">Experience</h2>
+  <div class="p-5 bg-gray-900 rounded-lg border border-white/10">
+    <h3 class="font-semibold">Full-Stack Development Intern — Bharat Dynamics Limited</h3>
+    <p class="text-gray-400 text-sm">June 2024 – July 2024</p>
+    <ul class="list-disc ml-5 text-gray-300 mt-2 space-y-1">
+      <li>Designed and built an Online Inspection Memo System</li>
+      <li>Implemented backend logic using Java and SQL</li>
+      <li>Worked with stakeholders on requirements and reliability</li>
+    </ul>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section x-show="active==='education'" class="space-y-2">
+  <h2 class="text-2xl font-semibold text-teal-400">Education</h2>
+  <p>B.Tech in Computer Science — SRM University AP (2022–2026)</p>
+</section>
+
+<!-- CONTACT -->
+<section x-show="active==='contact'" class="space-y-2">
+  <h2 class="text-2xl font-semibold text-teal-400">Contact</h2>
+  <p>Email: <a class="text-teal-300" href="mailto:rohankrishna150@gmail.com">rohankrishna150@gmail.com</a></p>
+  <p>GitHub: <a class="text-teal-300" href="https://github.com/Rohan1510">github.com/Rohan1510</a></p>
+</section>
+
+</main>
+
+<script src="./js/app.js"></script>
 </body>
 </html>

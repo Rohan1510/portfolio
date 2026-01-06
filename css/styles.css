@@ -1,0 +1,4 @@
+/* Minimal custom overrides */
+html {
+  scroll-behavior: smooth;
+}
