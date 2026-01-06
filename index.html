@@ -1,157 +1,97 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rohan Krishna | Cloud & Backend Engineer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rohan Krishna — Cloud & Backend Engineer</title>
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
-  <!-- Alpine.js -->
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-  <!-- Custom CSS -->
+  <!-- Styles -->
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 
-<body class="h-full bg-gray-950 text-gray-100 font-sans"
-      x-data="portfolioApp()"
-      x-init="init()">
+<body>
+  <!-- Background -->
+  <div class="grid-background"></div>
 
-<!-- NAVBAR -->
-<header class="fixed top-0 inset-x-0 z-50 bg-gray-950/80 backdrop-blur border-b border-white/10">
-  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <span class="font-bold text-lg">Rohan Krishna</span>
-    <div class="hidden md:flex gap-4">
-      <template x-for="t in tabs" :key="t.id">
-        <button @click="go(t.id)"
-          class="text-sm px-3 py-1 rounded-md transition"
-          :class="active === t.id ? 'bg-teal-500 text-black' : 'text-gray-400 hover:text-white'">
-          <span x-text="t.label"></span>
-        </button>
-      </template>
-    </div>
-  </nav>
-</header>
+  <div class="container">
 
-<main class="pt-24 max-w-5xl mx-auto px-6 space-y-20">
+    <!-- HEADER -->
+    <header id="home">
+      <h1>Rohan Krishna</h1>
+      <div class="title">Cloud & Backend Engineer (Security-Focused)</div>
 
-<!-- HERO -->
-<section x-show="active==='home'" class="text-center space-y-6">
-  <h1 class="text-4xl md:text-5xl font-bold">
-    Cloud & Backend Engineer
-  </h1>
-  <p class="text-gray-400 max-w-2xl mx-auto">
-    I design secure, scalable backend systems using AWS and serverless architectures,
-    with a focus on reliability, data integrity, and real-world failure scenarios.
-  </p>
-  <div class="flex justify-center gap-4">
-    <a href="mailto:rohankrishna150@gmail.com"
-       class="px-5 py-2 bg-teal-500 text-black rounded-md font-medium">
-      Contact
-    </a>
-    <a href="https://github.com/Rohan1510" target="_blank"
-       class="px-5 py-2 border border-white/20 rounded-md">
-      GitHub
-    </a>
+      <p class="summary">
+        AWS Certified Cloud Practitioner with hands-on experience building cloud-native
+        backend systems. Strong focus on serverless architectures, secure system design,
+        least-privilege IAM, and reliability-driven engineering.
+      </p>
+
+      <div class="links">
+        <a class="link" href="mailto:rohankrishna150@gmail.com">Email</a>
+        <a class="link" href="https://github.com/Rohan1510" target="_blank">GitHub</a>
+        <a class="link" href="https://linkedin.com/in/rohan-krishna" target="_blank">LinkedIn</a>
+      </div>
+    </header>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="card">
+        <h3>Bharat Dynamics Limited — Backend / Cloud Intern</h3>
+        <p class="muted">June 2024 – July 2024</p>
+        <p class="muted">
+          Built an Online Inspection Memo System using Java (DAO) and MySQL with
+          role-based access control, optimized queries, and secure backend workflows.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="card">
+        <h3>Serverless Blog with Markdown Editor</h3>
+        <p class="muted">AWS Amplify · S3 · CloudFront · Cognito · React</p>
+      </div>
+
+      <div class="card">
+        <h3>Private Chat v1 — End-to-End Encrypted Messaging</h3>
+        <p class="muted">JavaScript · Web Crypto API · ECDH · AES-GCM</p>
+      </div>
+
+      <div class="card">
+        <h3>Online Inspection Memo System</h3>
+        <p class="muted">Java · MySQL · DAO Pattern</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+
+      <div class="card">
+        <p class="muted">
+          <strong>Cloud:</strong> AWS (Lambda, S3, RDS, Cognito, CloudFront, Amplify)<br>
+          <strong>Backend:</strong> Java, REST APIs, Authentication, Authorization<br>
+          <strong>Security:</strong> ECDH, AES-GCM, IAM, RBAC<br>
+          <strong>Tools:</strong> Git, GitHub, Linux CLI, Docker
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      Built for cloud engineering roles • Rohan Krishna © 2026
+    </footer>
+
   </div>
-</section>
 
-<!-- ABOUT -->
-<section x-show="active==='about'" class="space-y-4">
-  <h2 class="text-2xl font-semibold text-teal-400">About</h2>
-  <p class="text-gray-300">
-    I focus on backend-heavy and cloud-native development rather than UI-centric work.
-    My interests lie in system design, authentication, data modeling, and infrastructure
-    that behaves predictably under load and failure.
-  </p>
-  <p class="text-gray-400">
-    I care about how systems fail, how access is controlled, and how data is protected —
-    not just how fast features are shipped.
-  </p>
-</section>
-
-<!-- PROJECTS -->
-<section x-show="active==='projects'" class="space-y-6">
-  <h2 class="text-2xl font-semibold text-teal-400">Selected Work</h2>
-
-  <div class="space-y-4">
-    <div class="p-5 bg-gray-900 rounded-lg border border-white/10">
-      <h3 class="font-semibold">Secure Serverless SaaS</h3>
-      <p class="text-gray-400">
-        Designed a zero-trust serverless application with per-user data isolation,
-        IAM least-privilege, encrypted storage, and JWT-based authentication.
-      </p>
-      <p class="text-sm text-gray-500 mt-2">
-        AWS Lambda · API Gateway · Cognito · DynamoDB · KMS · CloudFront
-      </p>
-    </div>
-
-    <div class="p-5 bg-gray-900 rounded-lg border border-white/10">
-      <h3 class="font-semibold">Cloud-Based Messaging Platform</h3>
-      <p class="text-gray-400">
-        Backend-focused messaging system emphasizing API design, scalability,
-        message persistence, and low-latency access patterns.
-      </p>
-      <p class="text-sm text-gray-500 mt-2">
-        AWS ECS · DynamoDB · Redis · Kafka
-      </p>
-    </div>
-
-    <div class="p-5 bg-gray-900 rounded-lg border border-white/10">
-      <h3 class="font-semibold">Online Inspection Memo System (BDL)</h3>
-      <p class="text-gray-400">
-        Built a secure internal system to digitize inspection workflows with
-        role-based access, optimized SQL queries, and backend validation.
-      </p>
-      <p class="text-sm text-gray-500 mt-2">
-        Java · SQL · DAO Pattern
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- STACK -->
-<section x-show="active==='stack'" class="space-y-4">
-  <h2 class="text-2xl font-semibold text-teal-400">Technical Stack</h2>
-  <ul class="text-gray-300 space-y-2">
-    <li><b class="text-teal-300">Cloud:</b> AWS (Lambda, S3, DynamoDB, IAM, CloudFront)</li>
-    <li><b class="text-teal-300">Backend:</b> Java, Node.js, REST APIs, authentication</li>
-    <li><b class="text-teal-300">Infra:</b> Docker, CI/CD basics</li>
-    <li><b class="text-teal-300">Security:</b> IAM policies, encryption basics, threat modeling</li>
-  </ul>
-</section>
-
-<!-- EXPERIENCE -->
-<section x-show="active==='experience'" class="space-y-4">
-  <h2 class="text-2xl font-semibold text-teal-400">Experience</h2>
-  <div class="p-5 bg-gray-900 rounded-lg border border-white/10">
-    <h3 class="font-semibold">Full-Stack Development Intern — Bharat Dynamics Limited</h3>
-    <p class="text-gray-400 text-sm">June 2024 – July 2024</p>
-    <ul class="list-disc ml-5 text-gray-300 mt-2 space-y-1">
-      <li>Designed and built an Online Inspection Memo System</li>
-      <li>Implemented backend logic using Java and SQL</li>
-      <li>Worked with stakeholders on requirements and reliability</li>
-    </ul>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section x-show="active==='education'" class="space-y-2">
-  <h2 class="text-2xl font-semibold text-teal-400">Education</h2>
-  <p>B.Tech in Computer Science — SRM University AP (2022–2026)</p>
-</section>
-
-<!-- CONTACT -->
-<section x-show="active==='contact'" class="space-y-2">
-  <h2 class="text-2xl font-semibold text-teal-400">Contact</h2>
-  <p>Email: <a class="text-teal-300" href="mailto:rohankrishna150@gmail.com">rohankrishna150@gmail.com</a></p>
-  <p>GitHub: <a class="text-teal-300" href="https://github.com/Rohan1510">github.com/Rohan1510</a></p>
-</section>
-
-</main>
-
-<script src="./js/app.js"></script>
+  <!-- JS -->
+  <script src="./js/app.js"></script>
 </body>
 </html>

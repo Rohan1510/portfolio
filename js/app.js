@@ -1,24 +1,24 @@
-function portfolioApp() {
-  return {
-    active: 'home',
-    tabs: [
-      { id: 'home', label: 'Home' },
-      { id: 'about', label: 'About' },
-      { id: 'projects', label: 'Work' },
-      { id: 'stack', label: 'Stack' },
-      { id: 'experience', label: 'Experience' },
-      { id: 'education', label: 'Education' },
-      { id: 'contact', label: 'Contact' }
-    ],
-    go(id) {
-      this.active = id;
-      history.replaceState(null, '', `#${id}`);
+/**
+ * app.js
+ * Minimal JS for subtle UX polish
+ */
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Fade-in sections on scroll
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
     },
-    init() {
-      const hash = location.hash.replace('#', '');
-      if (this.tabs.some(t => t.id === hash)) {
-        this.active = hash;
-      }
-    }
-  };
-}
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll("section").forEach(section => {
+    section.classList.add("fade-section");
+    observer.observe(section);
+  });
+});
