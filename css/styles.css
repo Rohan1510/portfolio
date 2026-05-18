@@ -492,3 +492,13 @@ footer a:hover {
   background: rgba(0, 229, 255, 0.25);
   color: #fff;
 }
+.experience-wrapper{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:1.5rem;
+  width:100%;
+}
+
+#experience .card{
+  height:100%;
+}
