@@ -359,6 +359,20 @@ section { padding: 6rem 4rem; position: relative; z-index: 2; }
   font-size: .75rem;
   font-weight: 500;
 }
+.timeline-dot.accent1 { border-color: var(--accent1); }
+.timeline-dot.accent2 { border-color: var(--accent2); }
+.timeline-dot.accent3 { border-color: var(--accent3); }
+.timeline-dot.accent4 { border-color: var(--accent4); }
+
+.co-tag.bdl { background: rgba(0,194,255,.12); color: var(--accent2); border-color: rgba(0,194,255,.3); }
+.co-tag.srm { background: rgba(255,209,102,.12); color: var(--accent3); border-color: rgba(255,209,102,.3); }
+.co-tag.tsbie { background: rgba(6,214,160,.12); color: var(--accent4); border-color: rgba(6,214,160,.3); }
+.co-tag.yr-amber { background: rgba(255,209,102,.12); color: var(--accent3); border-color: rgba(255,209,102,.3); }
+.co-tag.yr-blue { background: rgba(0,194,255,.12); color: var(--accent2); border-color: rgba(0,194,255,.3); }
+.co-tag.yr-red { background: rgba(255,75,75,.12); color: var(--accent1); border-color: rgba(255,75,75,.3); }
+.co-tag.yr-purple { background: rgba(150,100,255,.12); color: var(--accent4); border-color: rgba(150,100,255,.3); }
+
+.section-label.mt-lg { margin-top: 3.5rem; }
 .timeline-item h3 {
   font-family: var(--font-display);
   font-size: 1.2rem;
